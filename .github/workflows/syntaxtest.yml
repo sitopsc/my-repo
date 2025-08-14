@@ -10,13 +10,23 @@ jobs:
 #    steps:
 #      - run: echo "${VARTEST1}"
 
-    #Literals
+#    #Literals
+#    steps:
+#      - run: printenv | grep 'LITERAL_'
+#        env:
+#          LITERAL_NULL: ${{ null }}
+#          LITERAL_BOOLEAN: ${{ true }}
+#          LITERAL_NUMBER: ${{ 1234 }}
+#          LITERAL_STRING: ${{ 'Hello' }}
+#          LITERAL_OMIT_STRING: World
+
+    #Function
     steps:
-      - run: printenv | grep 'LITERAL_'
+      - run: printenv | grep '_FUNC'
         env:
-          LITERAL_NULL: ${{ null }}
-          LITERAL_BOOLEAN: ${{ true }}
-          LITERAL_NUMBER: ${{ 1234 }}
-          LITERAL_STRING: ${{ 'Hello' }}
-          LITERAL_OMIT_STRING: World
+          CONTAINS_FUNC: ${{ contais('Hello', 'ell') }}
+          FORMAT_FUNC: ${{ format('{0}, {1}です', 'Hi', 'world') }}
+      - run: echo "${HASH}"
+        env:
+          HASH: ${{ hashFiles('.github/workflow/Hello.yml') }}
 
