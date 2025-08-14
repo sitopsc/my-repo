@@ -24,7 +24,7 @@ jobs:
     steps:
       - run: printenv | grep '_FUNC'
         env:
-          CONTAINS_FUNC: ${{ contais('Hello', 'ell') }}
+          CONTAINS_FUNC: ${{ contains('Hello', 'ell') }}
           FORMAT_FUNC: ${{ format('{0}, {1}です', 'Hi', 'world') }}
       - run: echo "${HASH}"
         env:
