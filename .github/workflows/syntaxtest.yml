@@ -1,14 +1,14 @@
 name: SyntaxTest
 on: push
 jobs:
-  print:
-    runs-on: ubuntu-latest
+#  print:
+#    runs-on: ubuntu-latest
 
-    #Variables
-    env: 
-      VARTEST1: ${{vars.VARTEST1}}
-    steps:
-      - run: echo "${VARTEST1}"
+#    #Variables
+#    env: 
+#      VARTEST1: ${{vars.VARTEST1}}
+#    steps:
+#      - run: echo "${VARTEST1}"
 
 #    #Literals
 #    steps:
@@ -32,9 +32,8 @@ jobs:
 #          HASH: ${{ hashFiles('.github/workflows/hello.yml') }}
 
   skip-or-run:
+    if: ${{ github.actor == 'sitopsc' }}
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Hello"
-        if: ${{ contains('23456', '1') }}
-
+      - run: echo "Helloです"
 
