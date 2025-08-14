@@ -10,9 +10,13 @@ jobs:
 #    steps:
 #      - run: echo "${VARTEST1}"
 
-    #Sercrets
-    env: 
-      SECTEST1: ${{secrets.SECTEST1}}
+    #Literals
     steps:
-      - run: echo "${SECTEST1}"
+      - run: printenv | grep 'LITERAL_'
+      env:
+        LITERAL_NULL: ${{ null }}
+        LITERAL_BOOLEAN: ${{ true }}
+        LITERAL_NUMBER: ${{ 1234 }}
+        LITERAL_STRING: ${{ 'Hello' }}
+        LITERAL_OMIT_STRING: World
 
