@@ -4,8 +4,15 @@ jobs:
   print:
     runs-on: ubuntu-latest
 
-    #Variables
+#    #Variables
+#    env: 
+#      VARTEST1: ${{vars.VARTEST1}}
+#    steps:
+#      - run: echo "${VARTEST1}"
+
+    #Sercrets
     env: 
-      VARTEST1: ${{vars.VARTEST1}}
+      SECTEST1: ${{secrets.SECTEST1}}
     steps:
-      - run: echo "${VARTEST1}"
+      - run: echo "${SECTEST1}"
+
