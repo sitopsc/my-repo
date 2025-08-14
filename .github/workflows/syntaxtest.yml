@@ -26,6 +26,7 @@ jobs:
         env:
           CONTAINS_FUNC: ${{ contains('Hello', 'ell') }}
           FORMAT_FUNC: ${{ format('{0}, {1}です', 'Hi', 'world') }}
+      - uses: actions/checkout@v4
       - run: echo "${HASH}"
         env:
           HASH: ${{ hashFiles('.github/workflow/Hello.yml') }}
