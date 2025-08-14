@@ -32,7 +32,7 @@ jobs:
 #          HASH: ${{ hashFiles('.github/workflows/hello.yml') }}
 
   skip-or-run:
-    if: ${{ github.actor == 'sitopsc' }}
+    if: ${{ github.actor == 'sitopsc2' }}
     runs-on: ubuntu-latest
     steps:
       - run: echo "Helloです"
