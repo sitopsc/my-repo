@@ -4,11 +4,11 @@ jobs:
   print:
     runs-on: ubuntu-latest
 
-#    #Variables
-#    env: 
-#      VARTEST1: ${{vars.VARTEST1}}
-#    steps:
-#      - run: echo "${VARTEST1}"
+    #Variables
+    env: 
+      VARTEST1: ${{vars.VARTEST1}}
+    steps:
+      - run: echo "${VARTEST1}"
 
 #    #Literals
 #    steps:
@@ -20,14 +20,21 @@ jobs:
 #          LITERAL_STRING: ${{ 'Hello' }}
 #          LITERAL_OMIT_STRING: World
 
-    #Function
+#    #Function
+#    steps:
+#      - run: printenv | grep '_FUNC'
+#        env:
+#          CONTAINS_FUNC: ${{ contains('Hello', 'ell') }}
+#          FORMAT_FUNC: ${{ format('{0}, {1}です', 'Hi', 'world') }}
+#      - uses: actions/checkout@v4
+#      - run: echo "${HASH}"
+#        env:
+#          HASH: ${{ hashFiles('.github/workflows/hello.yml') }}
+
+  skip-or-run:
+    runs-on: ubuntu-latest
     steps:
-      - run: printenv | grep '_FUNC'
-        env:
-          CONTAINS_FUNC: ${{ contains('Hello', 'ell') }}
-          FORMAT_FUNC: ${{ format('{0}, {1}です', 'Hi', 'world') }}
-      - uses: actions/checkout@v4
-      - run: echo "${HASH}"
-        env:
-          HASH: ${{ hashFiles('.github/workflows/hello.yml') }}
+      - run: echo "Hello"
+        if: ${{ contains(github.run_id, 1) }}
+
 
