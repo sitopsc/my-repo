@@ -1,0 +1,10 @@
+name: Good Morning                         # ワークフロー名
+#on: push                            # イベント（プッシュ時に起動）
+#on: pull_request
+on: 
+  workflow_dispatch:
+jobs:                               # ジョブの定義
+  morning:                            # ジョブID
+    runs-on: ubuntu-latest          # ランナー（Ubuntuで実行）
+    steps:                          # ステップの定義
+      - run: echo "おはよう"    # シェルコマンドの実行
