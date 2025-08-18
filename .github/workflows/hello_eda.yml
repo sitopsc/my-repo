@@ -1,0 +1,10 @@
+name: Hello Eda                         # ワークフロー名
+#on: push                            # イベント（プッシュ時に起動）
+on: pull_request
+#on: 
+#  workflow_dispatch:
+jobs:                               # ジョブの定義
+  helloeda:                            # ジョブID
+    runs-on: ubuntu-latest          # ランナー（Ubuntuで実行）
+    steps:                          # ステップの定義
+      - run: echo "Hello Eda, world"    # シェルコマンドの実行
