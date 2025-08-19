@@ -1,8 +1,8 @@
 name: Hello Main Kai2                         # ワークフロー名
 #on: push                            # イベント（プッシュ時に起動）
-on: pull_request
-#on: 
-#  workflow_dispatch:
+#on: pull_request
+on: 
+  workflow_dispatch:
 jobs:                               # ジョブの定義
   hellomainkai2:                            # ジョブID
     runs-on: ubuntu-latest          # ランナー（Ubuntuで実行）
