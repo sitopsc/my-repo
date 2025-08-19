@@ -1,0 +1,8 @@
+name: Log group
+on: push
+jobs:
+  log:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          printenv
