@@ -21,4 +21,4 @@ jobs:
 #        with:
 #          name: uploaded
 #          path: downloaded
-      - run: cat downloaded/date.txt
+      - run: ls downloaded
