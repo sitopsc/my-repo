@@ -6,5 +6,6 @@ jobs:
     env:
       TEST1: SuperSecretValue
     steps:
+      - run: echo "${TEST1}"
       - run: echo "::add-mask::${TEST1}"
       - run: echo "${TEST1}"
