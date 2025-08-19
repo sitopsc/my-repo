@@ -1,10 +1,10 @@
-name: Hello Main                         # ワークフロー名
+name: Hello Main Kai                         # ワークフロー名
 #on: push                            # イベント（プッシュ時に起動）
-#on: pull_request
-on: 
-  workflow_dispatch:
+on: pull_request
+#on: 
+#  workflow_dispatch:
 jobs:                               # ジョブの定義
   hellomain:                            # ジョブID
     runs-on: ubuntu-latest          # ランナー（Ubuntuで実行）
     steps:                          # ステップの定義
-      - run: echo "Hello Main, world"    # シェルコマンドの実行
+      - run: echo "Hello Main改, world"    # シェルコマンドの実行
