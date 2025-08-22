@@ -2,7 +2,7 @@ name: Auto merge
 on: pull_request
 jobs:
   merges:
-    if: &{{ github.actor == 'dependabot[bot]' }}         # Dependabotのプルリクエストのみに制限
+    if: ${{ github.actor == 'dependabot[bot]' }}         # Dependabotのプルリクエストのみに制限
     runs-on: ubuntu-latest
     permissions:                                         # GitHub Actionsでのマージに必要なパーミッション
       contents: write
