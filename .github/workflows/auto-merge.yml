@@ -11,4 +11,4 @@ jobs:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}          # GitHub CLIのクレデンシャル ※環境変数GITHUB_TOKEN名にすると自動認識
     steps:
       - uses: actions/checkout@v4
-      - run: gh pr merge "${GITHUB_HEAD_REF}" --merge --auto
+      - run: gh pr merge "${GITHUB_HEAD_REF}" --merge
